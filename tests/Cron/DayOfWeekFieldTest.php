@@ -12,11 +12,13 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
+ *
+ * @coversDefaultClass \Cron\DayOfWeekField
  */
 class DayOfWeekFieldTest extends TestCase
 {
     /**
-     * @covers \Cron\DayOfWeekField::validate
+     * @covers ::validate
      */
     public function testValidatesField()
     {
@@ -31,7 +33,7 @@ class DayOfWeekFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfWeekField::isSatisfiedBy
+     * @covers ::isSatisfiedBy
      */
     public function testChecksIfSatisfied()
     {
@@ -41,7 +43,7 @@ class DayOfWeekFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfWeekField::increment
+     * @covers ::increment
      */
     public function testIncrementsDate()
     {
@@ -56,7 +58,7 @@ class DayOfWeekFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfWeekField::increment
+     * @covers ::increment
      */
     public function testIncrementsDateTimeImmutable()
     {
@@ -67,7 +69,7 @@ class DayOfWeekFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfWeekField::isSatisfiedBy
+     * @covers ::isSatisfiedBy
      */
     public function testValidatesHashValueWeekday()
     {
@@ -78,7 +80,7 @@ class DayOfWeekFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfWeekField::isSatisfiedBy
+     * @covers ::isSatisfiedBy
      */
     public function testValidatesHashValueNth()
     {
@@ -89,7 +91,7 @@ class DayOfWeekFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfWeekField::validate
+     * @covers ::validate
      */
     public function testValidateWeekendHash()
     {
@@ -105,7 +107,7 @@ class DayOfWeekFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfWeekField::isSatisfiedBy
+     * @covers ::isSatisfiedBy
      */
     public function testHandlesZeroAndSevenDayOfTheWeekValues()
     {
@@ -120,7 +122,7 @@ class DayOfWeekFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfWeekField::isSatisfiedBy
+     * @covers ::isSatisfiedBy
      */
     public function testHandlesLastWeekdayOfTheMonth()
     {

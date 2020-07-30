@@ -12,11 +12,13 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
+ *
+ * @coversDefaultClass \Cron\AbstractField
  */
 class AbstractFieldTest extends TestCase
 {
     /**
-     * @covers \Cron\AbstractField::isRange
+     * @covers ::isRange
      */
     public function testTestsIfRange(): void
     {
@@ -26,7 +28,7 @@ class AbstractFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\AbstractField::isIncrementsOfRanges
+     * @covers ::isIncrementsOfRanges
      */
     public function testTestsIfIncrementsOfRanges(): void
     {
@@ -38,7 +40,7 @@ class AbstractFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\AbstractField::isInRange
+     * @covers ::isInRange
      */
     public function testTestsIfInRange(): void
     {
@@ -51,7 +53,7 @@ class AbstractFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\AbstractField::isInIncrementsOfRanges
+     * @covers ::isInIncrementsOfRanges
      */
     public function testTestsIfInIncrementsOfRangesOnZeroStartRange(): void
     {
@@ -75,7 +77,7 @@ class AbstractFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\AbstractField::isInIncrementsOfRanges
+     * @covers ::isInIncrementsOfRanges
      */
     public function testTestsIfInIncrementsOfRangesOnOneStartRange(): void
     {
@@ -99,7 +101,7 @@ class AbstractFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\AbstractField::isSatisfied
+     * @covers ::isSatisfied
      */
     public function testTestsIfSatisfied(): void
     {

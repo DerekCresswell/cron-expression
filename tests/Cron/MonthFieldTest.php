@@ -11,11 +11,13 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
+ *
+ * @coversDefaultClass \Cron\MonthField
  */
 class MonthFieldTest extends TestCase
 {
     /**
-     * @covers \Cron\MonthField::validate
+     * @covers ::validate
      */
     public function testValidatesField()
     {
@@ -28,7 +30,7 @@ class MonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\MonthField::isSatisfiedBy
+     * @covers ::isSatisfiedBy
      */
     public function testChecksIfSatisfied()
     {
@@ -38,7 +40,7 @@ class MonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\MonthField::increment
+     * @covers ::increment
      */
     public function testIncrementsDate()
     {
@@ -53,7 +55,7 @@ class MonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\MonthField::increment
+     * @covers ::increment
      */
     public function testIncrementsDateTimeImmutable()
     {
@@ -64,7 +66,7 @@ class MonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\MonthField::increment
+     * @covers ::increment
      */
     public function testIncrementsDateWithThirtyMinuteTimezone()
     {
@@ -82,7 +84,7 @@ class MonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\MonthField::increment
+     * @covers ::increment
      */
     public function testIncrementsYearAsNeeded()
     {
@@ -93,7 +95,7 @@ class MonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\MonthField::increment
+     * @covers ::increment
      */
     public function testDecrementsYearAsNeeded()
     {

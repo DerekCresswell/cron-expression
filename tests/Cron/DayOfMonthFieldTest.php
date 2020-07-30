@@ -11,11 +11,13 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
+ *
+ * @coversDefaultClass \Cron\DayOfMonthField
  */
 class DayOfMonthFieldTest extends TestCase
 {
     /**
-     * @covers \Cron\DayOfMonthField::validate
+     * @covers ::validate
      */
     public function testValidatesField()
     {
@@ -30,7 +32,7 @@ class DayOfMonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfMonthField::isSatisfiedBy
+     * @covers ::isSatisfiedBy
      */
     public function testChecksIfSatisfied()
     {
@@ -40,7 +42,7 @@ class DayOfMonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfMonthField::increment
+     * @covers ::increment
      */
     public function testIncrementsDate()
     {
@@ -55,7 +57,7 @@ class DayOfMonthFieldTest extends TestCase
     }
 
     /**
-     * @covers \Cron\DayOfMonthField::increment
+     * @covers ::increment
      */
     public function testIncrementsDateTimeImmutable()
     {

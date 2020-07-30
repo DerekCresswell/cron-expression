@@ -10,11 +10,13 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
+ *
+ * @coversDefaultClass \Cron\FieldFactory
  */
 class FieldFactoryTest extends TestCase
 {
     /**
-     * @covers \Cron\FieldFactory::getField
+     * @covers ::getField
      */
     public function testRetrievesFieldInstances()
     {
@@ -34,7 +36,7 @@ class FieldFactoryTest extends TestCase
     }
 
     /**
-     * @covers \Cron\FieldFactory::getField
+     * @covers ::getField
      */
     public function testValidatesFieldPosition()
     {

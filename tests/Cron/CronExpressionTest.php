@@ -14,11 +14,13 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * @author Michael Dowling <mtdowling@gmail.com>
+ *
+ * @coversDefaultClass \Cron\CronExpression
  */
 class CronExpressionTest extends TestCase
 {
     /**
-     * @covers \Cron\CronExpression::factory
+     * @covers ::factory
      */
     public function testFactoryRecognizesTemplates(): void
     {
@@ -28,9 +30,9 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::__construct
-     * @covers \Cron\CronExpression::getExpression
-     * @covers \Cron\CronExpression::__toString
+     * @covers ::__construct
+     * @covers ::getExpression
+     * @covers ::__toString
      */
     public function testParsesCronSchedule(): void
     {
@@ -47,9 +49,9 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::__construct
-     * @covers \Cron\CronExpression::getExpression
-     * @covers \Cron\CronExpression::__toString
+     * @covers ::__construct
+     * @covers ::getExpression
+     * @covers ::__toString
      */
     public function testParsesCronScheduleThrowsAnException(): void
     {
@@ -59,8 +61,8 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::__construct
-     * @covers \Cron\CronExpression::getExpression
+     * @covers ::__construct
+     * @covers ::getExpression
      * @dataProvider scheduleWithDifferentSeparatorsProvider
      *
      * @param mixed $schedule
@@ -91,9 +93,9 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::__construct
-     * @covers \Cron\CronExpression::setExpression
-     * @covers \Cron\CronExpression::setPart
+     * @covers ::__construct
+     * @covers ::setExpression
+     * @covers ::setPart
      */
     public function testInvalidCronsWillFail(): void
     {
@@ -103,7 +105,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::setPart
+     * @covers ::setPart
      */
     public function testInvalidPartsWillFail(): void
     {
@@ -196,14 +198,10 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::isDue
-     * @covers \Cron\CronExpression::getNextRunDate
-     * @covers \Cron\DayOfMonthField
-     * @covers \Cron\DayOfWeekField
-     * @covers \Cron\MinutesField
-     * @covers \Cron\HoursField
-     * @covers \Cron\MonthField
-     * @covers \Cron\CronExpression::getRunDate
+     * @covers ::isDue
+     * @covers ::getNextRunDate
+     * @covers ::getRunDate
+     *
      * @dataProvider scheduleProvider
      *
      * @param mixed $schedule
@@ -234,7 +232,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::isDue
+     * @covers ::isDue
      */
     public function testIsDueHandlesDifferentDates(): void
     {
@@ -247,7 +245,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::isDue
+     * @covers ::isDue
      */
     public function testIsDueHandlesDifferentDefaultTimezones(): void
     {
@@ -274,7 +272,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::isDue
+     * @covers ::isDue
      */
     public function testIsDueHandlesDifferentSuppliedTimezones(): void
     {
@@ -295,7 +293,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::isDue
+     * @covers ::isDue
      */
     public function testIsDueHandlesDifferentTimezonesAsArgument(): void
     {
@@ -316,7 +314,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::isDue
+     * @covers ::isDue
      */
     public function testRecognisesTimezonesAsPartOfDateTime(): void
     {
@@ -342,7 +340,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::getPreviousRunDate
+     * @covers ::getPreviousRunDate
      */
     public function testCanGetPreviousRunDates(): void
     {
@@ -363,7 +361,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::getMultipleRunDates
+     * @covers ::getMultipleRunDates
      */
     public function testProvidesMultipleRunDates(): void
     {
@@ -377,8 +375,8 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::getMultipleRunDates
-     * @covers \Cron\CronExpression::setMaxIterationCount
+     * @covers ::getMultipleRunDates
+     * @covers ::setMaxIterationCount
      */
     public function testProvidesMultipleRunDatesForTheFarFuture(): void
     {
@@ -399,7 +397,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression
+     * @covers
      */
     public function testCanIterateOverNextRuns(): void
     {
@@ -419,7 +417,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::getRunDate
+     * @covers ::getRunDate
      */
     public function testGetRunDateHandlesDifferentDates()
     {
@@ -431,7 +429,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::getRunDate
+     * @covers ::getRunDate
      */
     public function testSkipsCurrentDateByDefault()
     {
@@ -443,7 +441,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::getRunDate
+     * @covers ::getRunDate
      * @ticket 7
      */
     public function testStripsForSeconds(): void
@@ -454,7 +452,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::getRunDate
+     * @covers ::getRunDate
      */
     public function testFixesPhpBugInDateIntervalMonth(): void
     {
@@ -493,7 +491,7 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::getRunDate
+     * @covers ::getRunDate
      */
     public function testKeepOriginalTime(): void
     {
@@ -505,11 +503,11 @@ class CronExpressionTest extends TestCase
     }
 
     /**
-     * @covers \Cron\CronExpression::__construct
-     * @covers \Cron\CronExpression::factory
-     * @covers \Cron\CronExpression::isValidExpression
-     * @covers \Cron\CronExpression::setExpression
-     * @covers \Cron\CronExpression::setPart
+     * @covers ::__construct
+     * @covers ::factory
+     * @covers ::isValidExpression
+     * @covers ::setExpression
+     * @covers ::setPart
      */
     public function testValidationWorks(): void
     {
